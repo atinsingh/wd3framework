@@ -22,8 +22,8 @@ public class Config {
             logger.info("Reading file  {} to load properties ", path.toString());
             InputStream stream = new FileInputStream(path.toFile());
             logger.trace("File file  {} found ready to load now ", path.toString());
-            properties = new Properties();
-            properties.load(stream);
+            properties = new Properties();  //creating object
+            properties.load(stream);     // loading property
 
         }catch (FileNotFoundException e) {
             logger.error("Properties File file NOT Found can't load property - MSG {} ", e.getMessage());
@@ -40,7 +40,7 @@ public class Config {
             instance = new Config();
         }
         if(instance.properties.getProperty(key)==null){
-            logger.warn("No propery found for key  {} , kindly verify properties file");
+            logger.warn("No property found for key  {} , kindly verify properties file");
         }
         return instance.properties.getProperty(key);
     }
