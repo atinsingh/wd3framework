@@ -31,6 +31,7 @@
             <scope>test</scope>
         </dependency>
 
+        <!-- Dependency for reading the excel files-->
         <dependency>
             <groupId>org.apache.poi</groupId>
             <artifactId>poi</artifactId>
@@ -42,11 +43,17 @@
             <version>${poi.version}</version>
         </dependency>
 
+        <!-- Dependency for Reports- ExtentReports-->
+        <!--https://mvnrepository.com/artifact/com.aventstack/extentreports/4.1.3-->
+
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>${extent.version}</version>
         </dependency>
+
+        <!--Dependency for Logging -Apache core-->
+        <!--https://logging.apache.org/log4j/2.x/log4j-core/dependency-info.html-->
 
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
@@ -76,7 +83,7 @@
                 </configuration>
             </plugin>
 
-            <!-- surefire -->
+            <!-- surefire pluggin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
