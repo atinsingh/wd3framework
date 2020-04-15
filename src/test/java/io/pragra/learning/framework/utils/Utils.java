@@ -34,8 +34,16 @@ public class Utils {
             } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+        if(type.equalsIgnoreCase("reports")){
+            try {
+                Path passPath = Paths.get((String) Config.getProperty("reports.location"));
+                if(!passPath.toFile().exists()){
+                    Files.createDirectories(passPath);
+                }
+            }catch (IOException ex){
 
-
+            }
         }
         return true;
     }
@@ -45,6 +53,13 @@ public class Utils {
         SimpleDateFormat dateFormat = new SimpleDateFormat((String) Config.getProperty("screenshot.file.timestamp"));
         return dateFormat.format(new Date());
     }
+
+    public static String getReportFileName(){
+        createDir("reports");
+        String fileName = Config.getProperty("reportfile.prefix")+"_"+createTimeStamp()+"."+Config.getProperty("reportfile.extension");
+        return Paths.get((String) Config.getProperty("reports.location"),fileName ).toString();
+    }
+
 
     public static Path getScreenshotFile(String testCase, boolean pass){
         createDir("screenshot");
