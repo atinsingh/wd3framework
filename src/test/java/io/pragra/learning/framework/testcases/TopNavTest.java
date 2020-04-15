@@ -1,5 +1,6 @@
 package io.pragra.learning.framework.testcases;
 
+import io.pragra.learning.framework.config.Config;
 import io.pragra.learning.framework.drivermanager.DriverManager;
 import io.pragra.learning.framework.pages.DownloadPage;
 import io.pragra.learning.framework.pages.TopNavbar;
@@ -15,7 +16,7 @@ public class TopNavTest {
     DownloadPage page;
     @BeforeSuite
     public void setup(){
-        driver.get("https://zoom.us");
+        driver.get((String) Config.getProperty("app.url"));
         topNavbar = new TopNavbar(driver);
     }
 
