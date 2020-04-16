@@ -28,7 +28,7 @@ public class DummyTest {
     public void testProperty(){
         Object property = Config.getProperty("chrome.exe.path");
         System.out.println(property);
-        Assert.assertEquals("/Users/atinsingh/Downloads/drivers/chromedriver",(String)property);
+        Assert.assertEquals("C:\\Users\\harleen\\Desktop\\chromedriver_win32\\chromedriver.exe",(String)property);
     }
 
     @Test(enabled = false)
